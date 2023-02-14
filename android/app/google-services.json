@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "410314028398",
+    "project_id": "pinyin-pal",
+    "storage_bucket": "pinyin-pal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410314028398:android:e323d190a9d82b1950bd7f",
+        "android_client_info": {
+          "package_name": "com.example.pinyin_pal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410314028398-chnfn9vvq5lh35tf1qm9e1s212s2jk8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChINWw8P9bhFCIip5fzCp23vK0Gi-7X-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410314028398-chnfn9vvq5lh35tf1qm9e1s212s2jk8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
