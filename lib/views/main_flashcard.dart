@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard_footer.dart';
@@ -13,6 +14,25 @@ class MainFlashcardPage extends StatefulWidget {
 }
 
 class _MainFlashcardPageState extends State<MainFlashcardPage> {
+  List<String> flashcardIDs = [];
+
+  // Future getFlashcardId() async {
+  //   await FirebaseFirestore.instance.collection('flashcards').get().then(
+  //         (snapshot) => snapshot.docs.forEach(
+  //           (flashcard) {
+  //             print(flashcard.reference);
+  //             flashcardIDs.add(flashcard.reference.id);
+  //           },
+  //         ),
+  //       );
+  // }
+
+  // @override
+  // void initState() {
+  //   getFlashcardId();
+  //   super.initState();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
