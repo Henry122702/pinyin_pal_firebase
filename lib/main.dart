@@ -11,16 +11,25 @@ import 'package:pinyin_pal/views/vocab_table_view/vocab_numbers.dart';
 
 import 'firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  FirebaseApp firebaseApp = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp(
+    firebaseApp: firebaseApp,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final FirebaseApp firebaseApp;
+
+  const MyApp({super.key, required this.firebaseApp});
+
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
 
   // This widget is the root of your application.
   @override
@@ -40,7 +49,28 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainFlashcardPage(),
+      routes: {
+        '/': (context) => FutureBuilder(
+            future: _initializeFirebase(),
+            builder: ((context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return MainNavigationRoot();
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            })),
+        '/quiz': (context) => FutureBuilder(
+            future: _initializeFirebase(),
+            builder: ((context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return MainFlashcardPage();
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            })),
+      },
     );
   }
 }

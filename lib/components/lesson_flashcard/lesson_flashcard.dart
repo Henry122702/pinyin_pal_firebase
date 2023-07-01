@@ -2,12 +2,20 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:lpinyin/lpinyin.dart';
 
 import 'package:pinyin_pal/constants/colors.dart';
 import 'package:pinyin_pal/database_functions/get_flashcard_hanzi.dart';
 
+import '../../speech_api.dart';
+
 class LessonFlashcard extends StatefulWidget {
-  const LessonFlashcard({super.key});
+  final String text;
+
+  const LessonFlashcard({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
 
   @override
   State<LessonFlashcard> createState() => _LessonFlashcardState();
@@ -82,7 +90,7 @@ class _LessonFlashcardState extends State<LessonFlashcard> {
                             ),
                           ),
                           Text(
-                            "Yi",
+                            widget.text,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
@@ -121,7 +129,8 @@ class _LessonFlashcardState extends State<LessonFlashcard> {
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "Yo",
+                            PinyinHelper.getPinyin(widget.text,
+                                format: PinyinFormat.WITH_TONE_MARK),
                             style: TextStyle(
                               fontSize: 30,
                             ),
