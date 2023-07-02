@@ -61,28 +61,19 @@ class _HomePageState extends State<HomePage> {
               });
             })(index),
             child: AnimatedContainer(
-              decoration: BoxDecoration(
-                  color: angkaSelected
-                      ? GlobalColors.primaryBlackColor
-                      : GlobalColors.textPrimaryWhiteColor,
-                  borderRadius: BorderRadius.circular(15)),
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInOutCubic,
-              child: _activatedIndex == index
-                  ? ActivatedLessonCard(
-                      lessonName: title,
-                      lessonWordCount: "$count Kata",
-                      lessonDescription: description,
-                      lessonExampleHanzi: lessonPinyin,
-                      lessonExamplePinyin: lessonHanzi,
-                    )
-                  : LessonCard(
-                      lessonName: title,
-                      lessonWordCount: "$count Kata",
-                      lessonExampleHanzi: lessonHanzi,
-                      lessonExamplePinyin: lessonPinyin,
-                    ),
-            ),
+                decoration: BoxDecoration(
+                    color: angkaSelected
+                        ? GlobalColors.primaryBlackColor
+                        : GlobalColors.secondaryBlackColor,
+                    borderRadius: BorderRadius.circular(15)),
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOutCubic,
+                child: LessonCard(
+                  lessonName: title,
+                  lessonWordCount: "$count Kata",
+                  lessonExampleHanzi: lessonHanzi,
+                  lessonExamplePinyin: lessonPinyin,
+                )),
           ),
         ),
       );
