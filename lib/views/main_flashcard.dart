@@ -6,40 +6,28 @@ import 'package:lpinyin/lpinyin.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard_footer.dart';
 import 'package:pinyin_pal/constants/colors.dart';
+import 'package:pinyin_pal/models/questions.dart';
 import 'package:pinyin_pal/speech_api.dart';
+import 'package:pinyin_pal/models/modules.dart';
+import 'package:pinyin_pal/db/database.dart';
 
 class MainFlashcardPage extends StatefulWidget {
-  const MainFlashcardPage({super.key});
-
   @override
   State<MainFlashcardPage> createState() => _MainFlashcardPageState();
 }
 
 class _MainFlashcardPageState extends State<MainFlashcardPage> {
-  List<String> flashcardIDs = [];
-
-  // Future getFlashcardId() async {
-  //   await FirebaseFirestore.instance.collection('flashcards').get().then(
-  //         (snapshot) => snapshot.docs.forEach(
-  //           (flashcard) {
-  //             print(flashcard.reference);
-  //             flashcardIDs.add(flashcard.reference.id);
-  //           },
-  //         ),
-  //       );
-  // }
-
-  // @override
-  // void initState() {
-  //   getFlashcardId();
-  //   super.initState();
-  // }
+  int _moduleIndex = 0;
+  bool _dataLoaded = false;
+  final List<Question> _questionData = [];
 
   String text = "";
   bool isListening = false;
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildQuestionWidget(BuildContext context) {
+    Question question = _questionData[_moduleIndex];
+    int questionCount = _questionData.length;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -79,12 +67,12 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                           style: DefaultTextStyle.of(context).style,
                           children: <TextSpan>[
                             TextSpan(
-                              text: "0",
+                              text: question.sequence.toString(),
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 24),
                             ),
                             TextSpan(
-                              text: "/10",
+                              text: "/$questionCount",
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.bold,
@@ -109,7 +97,7 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                 ),
                               ),
                               Text(
-                                text,
+                                question.question,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 72,
@@ -120,20 +108,38 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      setState(() {
+                                        if (_moduleIndex + 1 >
+                                            _questionData.length - 1) {
+                                          Navigator.of(context).pop();
+                                        } else {
+                                          _moduleIndex -= 1;
+                                        }
+                                      });
+                                    },
                                     icon: Icon(
                                       Icons.arrow_left,
                                       size: 50,
                                     ),
                                   ),
                                   Text(
-                                    "satu",
+                                    question.indonesian,
                                     style: TextStyle(
                                       fontSize: 30,
                                     ),
                                   ),
                                   IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        setState(() {
+                                          if (_moduleIndex + 1 >
+                                              _questionData.length - 1) {
+                                            Navigator.of(context).pop();
+                                          } else {
+                                            _moduleIndex += 1;
+                                          }
+                                        });
+                                      },
                                       icon: Icon(
                                         Icons.arrow_right,
                                         size: 50,
@@ -148,12 +154,20 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
-                              Text(
-                                PinyinHelper.getPinyin(text,
-                                    format: PinyinFormat.WITH_TONE_MARK),
-                                style: TextStyle(
-                                  fontSize: 30,
-                                ),
+                              Row(
+                                children: [
+                                  Text(text),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    PinyinHelper.getPinyin(text,
+                                        format: PinyinFormat.WITH_TONE_MARK),
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                    ),
+                                  ),
+                                ],
                               ),
                               SizedBox(
                                 height: 125,
@@ -233,6 +247,36 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
         ],
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Map<String, dynamic> routeData =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+
+    return _dataLoaded
+        ? _buildQuestionWidget(context)
+        : StreamBuilder(
+            stream:
+                PinyinPalDatabase.getQuestionsByModuleId(routeData['moduleId']),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text('Error');
+              }
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              _dataLoaded = true;
+              for (var document in snapshot.data!.docs) {
+                Map<String, dynamic> data =
+                    document.data()! as Map<String, dynamic>;
+                _questionData.add(Question.fromMap(data));
+              }
+              print(_questionData);
+              return _buildQuestionWidget(context);
+            });
   }
 
   Future toggleRecording() => SpeechApi.toggleRecording(

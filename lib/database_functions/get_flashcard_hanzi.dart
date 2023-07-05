@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pinyin_pal/model/card.dart';
+import 'package:pinyin_pal/models/card.dart';
 
 class GetFlashcardHanzi extends StatelessWidget {
   const GetFlashcardHanzi({super.key});

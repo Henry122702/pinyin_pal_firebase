@@ -73,6 +73,12 @@ class _HomePageState extends State<HomePage> {
                   lessonWordCount: "$count Kata",
                   lessonExampleHanzi: lessonHanzi,
                   lessonExamplePinyin: lessonPinyin,
+                  quizOnclick: () {
+                    Navigator.of(context).pushNamed('/quiz', arguments: {
+                      'moduleId': id,
+                      'modulesData': modulesData,
+                    });
+                  },
                 )),
           ),
         ),

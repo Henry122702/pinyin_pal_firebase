@@ -7,4 +7,11 @@ class PinyinPalDatabase {
         .orderBy('sequence')
         .snapshots();
   }
+
+  static Stream<QuerySnapshot> getQuestionsByModuleId(String moduleId) {
+    return FirebaseFirestore.instance
+        .collection('modules/$moduleId/questions')
+        .orderBy('sequence')
+        .snapshots();
+  }
 }
