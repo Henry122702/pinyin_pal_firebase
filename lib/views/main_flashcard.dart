@@ -31,11 +31,15 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              Navigator.of(context).pop();
+            });
+          },
           icon: Icon(Icons.arrow_back),
         ),
         title: Text(
-          "Kosakata Angka",
+          "Latihan Membaca",
           style: TextStyle(
               color: GlobalColors.textPrimaryWhiteColor,
               fontWeight: FontWeight.bold,
@@ -58,7 +62,7 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                     color: GlobalColors.textPrimaryWhiteColor,
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  padding: const EdgeInsets.fromLTRB(15, 30, 15, 30),
+                  padding: const EdgeInsets.fromLTRB(15, 10, 15, 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -82,25 +86,26 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                         ),
                       ),
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 15,
+                            height: 60,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                '',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 64,
-                                ),
-                              ),
-                              Text(
                                 question.question,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 72,
+                                ),
+                              ),
+                              Text(
+                                question.answer,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 32,
                                 ),
                               ),
                               Row(
@@ -110,10 +115,11 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                   IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        if (_moduleIndex + 1 >
+                                        if (_moduleIndex - 1 >
                                             _questionData.length - 1) {
                                           Navigator.of(context).pop();
                                         } else {
+                                          text = "";
                                           _moduleIndex -= 1;
                                         }
                                       });
@@ -136,6 +142,7 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                               _questionData.length - 1) {
                                             Navigator.of(context).pop();
                                           } else {
+                                            text = "";
                                             _moduleIndex += 1;
                                           }
                                         });
@@ -147,30 +154,52 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                 ],
                               ),
                               SizedBox(
-                                height: 60,
+                                height: 40,
                               ),
                               Text(
                                 "Jawaban kamu :",
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
-                              Row(
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(text),
                                   SizedBox(
-                                    width: 20,
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    text,
+                                    style: text == question.question
+                                        ? TextStyle(
+                                            color: Colors.green,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 54,
+                                          )
+                                        : TextStyle(
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 54,
+                                          ),
                                   ),
                                   Text(
                                     PinyinHelper.getPinyin(text,
                                         format: PinyinFormat.WITH_TONE_MARK),
-                                    style: TextStyle(
-                                      fontSize: 30,
-                                    ),
+                                    style: text == question.question
+                                        ? TextStyle(
+                                            fontSize: 32,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.green,
+                                          )
+                                        : TextStyle(
+                                            fontSize: 32,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.red,
+                                          ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 125,
+                                height: 40,
                               ),
                             ],
                           )
