@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:lpinyin/lpinyin.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard.dart';
 import 'package:pinyin_pal/components/lesson_flashcard/lesson_flashcard_footer.dart';
@@ -17,10 +18,21 @@ class MainFlashcardPage extends StatefulWidget {
 }
 
 class _MainFlashcardPageState extends State<MainFlashcardPage> {
+  // Load Quiz Data Setup
   int _moduleIndex = 0;
   bool _dataLoaded = false;
   final List<Question> _questionData = [];
 
+// Text-To-Speech
+  final FlutterTts flutterTts = FlutterTts();
+
+  speak(String word) async {
+    await flutterTts.setLanguage("zh-CN");
+    await flutterTts.setPitch(1);
+    await flutterTts.speak(word);
+  }
+
+//Speech-To-Text
   String text = "";
   bool isListening = false;
 
@@ -221,7 +233,9 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        speak(question.question);
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(40),
                         child: Icon(
@@ -243,23 +257,6 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                         padding: const EdgeInsets.all(40),
                         child: Icon(
                           isListening ? Icons.mic_sharp : Icons.mic_none,
-                          color: GlobalColors.textPrimaryWhiteColor,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: GlobalColors.primaryBlackColor,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(40),
-                        child: Icon(
-                          Icons.star_outline,
                           color: GlobalColors.textPrimaryWhiteColor,
                           size: 30,
                         ),

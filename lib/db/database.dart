@@ -14,4 +14,11 @@ class PinyinPalDatabase {
         .orderBy('sequence')
         .snapshots();
   }
+
+  static Stream<QuerySnapshot> getQuestionsReference(
+      String moduleId, String questionId) {
+    return FirebaseFirestore.instance
+        .collection('modules/$moduleId/questions/$questionId')
+        .snapshots();
+  }
 }

@@ -47,6 +47,9 @@ dependencies:
   #Convert Hanzi to Pinyin
   lpinyin:
  
+  #Text to speech as a pronunciation guide
+  flutter_tts: ^3.7.0
+
   #Colors
   hexcolor: ^3.0.1
 
