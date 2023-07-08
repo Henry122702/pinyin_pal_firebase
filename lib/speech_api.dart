@@ -8,6 +8,11 @@ class SpeechApi {
     required Function(String text) onResult,
     required ValueChanged<bool> onListening,
   }) async {
+    if (_speech.isListening) {
+      _speech.stop();
+      return true;
+    }
+
     final isAvailable = await _speech.initialize(
       onStatus: (status) => onListening(_speech.isListening),
       onError: (e) => print('Error: $e'),

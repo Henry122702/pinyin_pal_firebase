@@ -65,8 +65,8 @@ class _VocabPageState extends State<VocabPage> {
                 child: VocabCard(
                     vocabTitle: "Benda",
                     vocabWordCount: "10 Kata",
-                    vocabHanzi: "  茶,    米饭,    电视 ",
-                    vocabPinyin: "chá  mǐfàn  diànshì "),
+                    vocabHanzi: "茶, 米饭, 电视 ",
+                    vocabPinyin: "chá mǐfàn diànshì "),
               ),
               GestureDetector(
                 onTap: (() {
@@ -81,8 +81,8 @@ class _VocabPageState extends State<VocabPage> {
                 child: VocabCard(
                     vocabTitle: "Orang",
                     vocabWordCount: "10 Kata",
-                    vocabHanzi: "  我,   你,   朋友 ",
-                    vocabPinyin: " wǒ  nǐ  péngyou "),
+                    vocabHanzi: " 我, 你, 朋友 ",
+                    vocabPinyin: "wǒ nǐ péngyou "),
               ),
               GestureDetector(
                 onTap: () {
@@ -97,8 +97,8 @@ class _VocabPageState extends State<VocabPage> {
                 child: VocabCard(
                     vocabTitle: "Waktu",
                     vocabWordCount: "10 Kata",
-                    vocabHanzi: " 日,   今天,      明天",
-                    vocabPinyin: " rì   jīntiān  míngtiān "),
+                    vocabHanzi: "日, 今天, 明天",
+                    vocabPinyin: "rì jīntiān míngtiān "),
               ),
               GestureDetector(
                 onTap: () {
@@ -113,8 +113,8 @@ class _VocabPageState extends State<VocabPage> {
                 child: VocabCard(
                     vocabTitle: "Tempat",
                     vocabWordCount: "5 Kata",
-                    vocabHanzi: "  家,   学校,        饭店 ",
-                    vocabPinyin: " jiā, xuéxiào, fàndiàn "),
+                    vocabHanzi: "家, 学校, 饭店 ",
+                    vocabPinyin: "jiā, xuéxiào, fàndiàn "),
               ),
               GestureDetector(
                 onTap: () {
@@ -129,7 +129,7 @@ class _VocabPageState extends State<VocabPage> {
                 child: VocabCard(
                     vocabTitle: "Aktivitas",
                     vocabWordCount: "5 Kata",
-                    vocabHanzi: " 吃,   喝,   睡觉 ",
+                    vocabHanzi: " 吃, 喝, 睡觉 ",
                     vocabPinyin: "chī, hē, shuìjiào "),
               ),
             ],

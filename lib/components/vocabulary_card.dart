@@ -66,6 +66,7 @@ class _VocabCardState extends State<VocabCard> {
                         color: GlobalColors.primaryBlackColor),
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         widget.vocabHanzi,

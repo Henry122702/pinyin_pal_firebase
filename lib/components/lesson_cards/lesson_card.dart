@@ -27,9 +27,9 @@ class _LessonCardState extends State<LessonCard> {
     return GestureDetector(
       onTap: widget.quizOnclick,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 0),
+        padding: const EdgeInsets.fromLTRB(5.0, 5.0, 0, 0),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.fromLTRB(20, 20, 10, 20),
           child: Column(
             children: [
               Row(
