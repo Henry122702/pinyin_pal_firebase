@@ -29,6 +29,14 @@ class AboutApp extends StatelessWidget {
                 height: 10,
               ),
               AboutCard(),
+              SizedBox(
+                height: 20,
+              ),
+              const Image(
+                image: AssetImage("assets/images/logo_UIB_biru.png"),
+                height: 112,
+                width: 112,
+              ),
             ],
           ),
         ],
