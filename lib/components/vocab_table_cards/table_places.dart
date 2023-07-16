@@ -30,6 +30,7 @@ class VocabTablePlaces extends StatelessWidget {
               Column(
                 children: [
                   DataTable(
+                    columnSpacing: 15,
                     columns: [
                       DataColumn(
                         label: Text('Mandarin'),
@@ -75,6 +76,63 @@ class VocabTablePlaces extends StatelessWidget {
                           DataCell(Text('医院')),
                           DataCell(Text('yīyuàn')),
                           DataCell(Text('Rumah Sakit')),
+                        ],
+                      ),
+                      //Recently Added
+                      DataRow(
+                        cells: [
+                          DataCell(Text('火车站')),
+                          DataCell(Text('huǒchēzhàn')),
+                          DataCell(Text('Stasiun Kereta')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('中国')),
+                          DataCell(Text('zhōng guó')),
+                          DataCell(Text('China')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('北京')),
+                          DataCell(Text('běijīng')),
+                          DataCell(Text('Beijing')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('上')),
+                          DataCell(Text('shàng')),
+                          DataCell(Text('Atas')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('下')),
+                          DataCell(Text('xià')),
+                          DataCell(Text('Bawah')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('前面')),
+                          DataCell(Text('qiánmiàn')),
+                          DataCell(Text('Depan')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('后面')),
+                          DataCell(Text('hòumiàn')),
+                          DataCell(Text('Belakang')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('里')),
+                          DataCell(Text('lǐmiàn')),
+                          DataCell(Text('Dalam (Di Dalam)')),
                         ],
                       ),
                     ],

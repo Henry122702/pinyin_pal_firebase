@@ -7,6 +7,7 @@ import 'package:pinyin_pal/constants/colors.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_activities.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_numbers.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_objects.dart';
+import 'package:pinyin_pal/views/vocab_table_view/vocab_objects_2.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_people.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_place.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_time.dart';
@@ -64,9 +65,25 @@ class _VocabPageState extends State<VocabPage> {
                 },
                 child: VocabCard(
                     vocabTitle: "Benda",
-                    vocabWordCount: "10 Kata",
+                    vocabWordCount: "12 Kata",
                     vocabHanzi: "茶, 米饭, 电视 ",
                     vocabPinyin: "chá mǐfàn diànshì "),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ObjectsVocabTable2()),
+                    );
+                  });
+                },
+                child: VocabCard(
+                    vocabTitle: "Benda 2",
+                    vocabWordCount: "12 Kata",
+                    vocabHanzi: "衣服, 桌子, 椅子 ",
+                    vocabPinyin: "yīfu zhuōzi yǐzi "),
               ),
               GestureDetector(
                 onTap: (() {
@@ -80,7 +97,7 @@ class _VocabPageState extends State<VocabPage> {
                 }),
                 child: VocabCard(
                     vocabTitle: "Orang",
-                    vocabWordCount: "10 Kata",
+                    vocabWordCount: "18 Kata",
                     vocabHanzi: " 我, 你, 朋友 ",
                     vocabPinyin: "wǒ nǐ péngyou "),
               ),
@@ -96,7 +113,7 @@ class _VocabPageState extends State<VocabPage> {
                 },
                 child: VocabCard(
                     vocabTitle: "Waktu",
-                    vocabWordCount: "10 Kata",
+                    vocabWordCount: "14 Kata",
                     vocabHanzi: "日, 今天, 明天",
                     vocabPinyin: "rì jīntiān míngtiān "),
               ),
@@ -112,7 +129,7 @@ class _VocabPageState extends State<VocabPage> {
                 },
                 child: VocabCard(
                     vocabTitle: "Tempat",
-                    vocabWordCount: "5 Kata",
+                    vocabWordCount: "18 Kata",
                     vocabHanzi: "家, 学校, 饭店 ",
                     vocabPinyin: "jiā, xuéxiào, fàndiàn "),
               ),
@@ -128,7 +145,7 @@ class _VocabPageState extends State<VocabPage> {
                 },
                 child: VocabCard(
                     vocabTitle: "Aktivitas",
-                    vocabWordCount: "5 Kata",
+                    vocabWordCount: "10 Kata",
                     vocabHanzi: " 吃, 喝, 睡觉 ",
                     vocabPinyin: "chī, hē, shuìjiào "),
               ),

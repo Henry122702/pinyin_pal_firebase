@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinyin_pal/constants/colors.dart';
 
-class VocabTableActivities extends StatelessWidget {
-  const VocabTableActivities({super.key});
+class VocabTableObjects2 extends StatelessWidget {
+  const VocabTableObjects2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +16,14 @@ class VocabTableActivities extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 30, 15, 30),
+          padding: const EdgeInsets.fromLTRB(0, 30, 15, 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Aktivitas",
+                "Kosakata Benda 2",
                 style: TextStyle(
-                    fontSize: 33,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold,
                     color: GlobalColors.primaryBlackColor),
               ),
@@ -44,73 +44,86 @@ class VocabTableActivities extends StatelessWidget {
                     rows: [
                       DataRow(
                         cells: [
-                          DataCell(Text('吃')),
-                          DataCell(Text('chī')),
-                          DataCell(Text('Makan')),
+                          DataCell(Text('衣服')),
+                          DataCell(Text('yīfu')),
+                          DataCell(Text('Baju')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('喝')),
-                          DataCell(Text('hē')),
-                          DataCell(Text('Minum')),
+                          DataCell(Text('水')),
+                          DataCell(Text('shuǐ')),
+                          DataCell(Text('Air')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('睡觉')),
-                          DataCell(Text('shuìjiào')),
-                          DataCell(Text('Tidur')),
+                          DataCell(Text('水果')),
+                          DataCell(Text('shuǐguǒ')),
+                          DataCell(Text('Buah')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('坐')),
-                          DataCell(Text('zuò')),
-                          DataCell(Text('Duduk')),
+                          DataCell(Text('出租车')),
+                          DataCell(Text('chūzūchē')),
+                          DataCell(Text('Taxi')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('看见')),
-                          DataCell(Text('kànjiàn')),
-                          DataCell(Text('Melihat')),
-                        ],
-                      ),
-                      //recently added
-                      DataRow(
-                        cells: [
-                          DataCell(Text('听')),
-                          DataCell(Text('tīng')),
-                          DataCell(Text('Mendengar')),
+                          DataCell(Text('电影')),
+                          DataCell(Text('diànyǐng')),
+                          DataCell(Text('Film')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('说话')),
-                          DataCell(Text('shuōhuà')),
-                          DataCell(Text('Membicara')),
+                          DataCell(Text('天气')),
+                          DataCell(Text('tiānqì')),
+                          DataCell(Text('Cuaca')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('看')),
-                          DataCell(Text('kàn')),
-                          DataCell(Text('Nampak')),
+                          DataCell(Text('猫')),
+                          DataCell(Text('māo')),
+                          DataCell(Text('Kucing')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('读')),
-                          DataCell(Text('dú')),
-                          DataCell(Text('Membaca')),
+                          DataCell(Text('狗')),
+                          DataCell(Text('gǒu')),
+                          DataCell(Text('Anjing')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('写')),
-                          DataCell(Text('xiě')),
-                          DataCell(Text('Menulis')),
+                          DataCell(Text('东西')),
+                          DataCell(Text('dōngxi')),
+                          DataCell(Text('Benda')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('名字')),
+                          DataCell(Text('míngzi')),
+                          DataCell(Text('Nama')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('桌子')),
+                          DataCell(Text('zhuōzi')),
+                          DataCell(Text('Meja')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('椅子')),
+                          DataCell(Text('yǐzi')),
+                          DataCell(Text('Kursi')),
                         ],
                       ),
                     ],

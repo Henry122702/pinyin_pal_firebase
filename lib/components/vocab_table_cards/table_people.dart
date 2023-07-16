@@ -16,7 +16,7 @@ class VocabTablePeople extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 30, 10, 30),
+          padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -30,6 +30,7 @@ class VocabTablePeople extends StatelessWidget {
               Column(
                 children: [
                   DataTable(
+                    columnSpacing: 15,
                     columns: [
                       DataColumn(
                         label: Text('Mandarin'),
@@ -110,6 +111,63 @@ class VocabTablePeople extends StatelessWidget {
                           DataCell(Text('朋友')),
                           DataCell(Text('péngyou')),
                           DataCell(Text('Teman')),
+                        ],
+                      ),
+                      //Recently Added
+                      DataRow(
+                        cells: [
+                          DataCell(Text('医生')),
+                          DataCell(Text('yīshēng')),
+                          DataCell(Text('Dokter')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('先生')),
+                          DataCell(Text('xiānsheng')),
+                          DataCell(Text('Tuan')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('小姐')),
+                          DataCell(Text('xiǎojiě')),
+                          DataCell(Text('Nona')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('我们')),
+                          DataCell(Text('wǒmen')),
+                          DataCell(Text('Kita/Kami')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('你们')),
+                          DataCell(Text('nǐmen')),
+                          DataCell(Text('Kalian')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('他/她')),
+                          DataCell(Text('tā/tā')),
+                          DataCell(Text('Dia(Pria/Wanita)')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('他们/她们')),
+                          DataCell(Text('tāmen/tāmen')),
+                          DataCell(Text('Mereka(Pria/Wanita)')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('人')),
+                          DataCell(Text('rén')),
+                          DataCell(Text('Orang')),
                         ],
                       ),
                     ],

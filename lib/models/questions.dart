@@ -4,15 +4,14 @@ class Question {
   final String question;
   final String answer;
   final String indonesian;
-  final bool isStarred;
 
-  Question(
-      {required this.sequence,
-      required this.docid,
-      required this.question,
-      required this.answer,
-      required this.indonesian,
-      required this.isStarred});
+  Question({
+    required this.sequence,
+    required this.docid,
+    required this.question,
+    required this.answer,
+    required this.indonesian,
+  });
 
   Map<String, dynamic> toMap() {
     return {
@@ -21,7 +20,6 @@ class Question {
       'question': question,
       'answer': answer,
       'indonesian': indonesian,
-      'isStarred': isStarred
     };
   }
 
@@ -30,6 +28,5 @@ class Question {
         docid = questionMap['docid'],
         question = questionMap['question'],
         answer = questionMap['answer'],
-        indonesian = questionMap['indonesian'],
-        isStarred = questionMap['isStarred'];
+        indonesian = questionMap['indonesian'];
 }

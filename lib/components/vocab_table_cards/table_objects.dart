@@ -112,6 +112,21 @@ class VocabTableObjects extends StatelessWidget {
                           DataCell(Text('Buku')),
                         ],
                       ),
+                      //Recently Added
+                      DataRow(
+                        cells: [
+                          DataCell(Text('汉语')),
+                          DataCell(Text('hànyǔ')),
+                          DataCell(Text('Mandarin')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('字')),
+                          DataCell(Text('zì')),
+                          DataCell(Text('Huruf')),
+                        ],
+                      ),
                     ],
                   )
                 ],

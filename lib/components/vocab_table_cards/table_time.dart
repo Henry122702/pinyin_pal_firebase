@@ -112,6 +112,35 @@ class VocabTableTime extends StatelessWidget {
                           DataCell(Text('Tahun')),
                         ],
                       ),
+                      //Recently Added
+                      DataRow(
+                        cells: [
+                          DataCell(Text('点')),
+                          DataCell(Text('diǎn')),
+                          DataCell(Text('Titik')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('分钟')),
+                          DataCell(Text('fēnzhōng')),
+                          DataCell(Text('Menit')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('现在')),
+                          DataCell(Text('xiànzài')),
+                          DataCell(Text('Sekarang')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('时候')),
+                          DataCell(Text('shíhou')),
+                          DataCell(Text('Waktu')),
+                        ],
+                      ),
                     ],
                   )
                 ],
