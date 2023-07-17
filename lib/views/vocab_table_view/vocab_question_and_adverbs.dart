@@ -1,19 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-
-import 'package:pinyin_pal/components/vocab_table_cards/table_places.dart';
+import 'package:pinyin_pal/components/vocab_table_cards/table_questions_and_adverbs.dart';
 
 import 'package:pinyin_pal/constants/colors.dart';
 
-class PlaceVocabTable extends StatefulWidget {
-  const PlaceVocabTable({super.key});
+class QuestionAndAdverbsTable extends StatefulWidget {
+  const QuestionAndAdverbsTable({super.key});
 
   @override
-  State<PlaceVocabTable> createState() => _PlaceVocabTableState();
+  State<QuestionAndAdverbsTable> createState() =>
+      _QuestionAndAdverbsTableState();
 }
 
-class _PlaceVocabTableState extends State<PlaceVocabTable> {
+class _QuestionAndAdverbsTableState extends State<QuestionAndAdverbsTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _PlaceVocabTableState extends State<PlaceVocabTable> {
       body: ListView(
         children: [
           Column(
-            children: [VocabTablePlaces()],
+            children: [VocabTableQuestionsAndAdverbs()],
           ),
         ],
       ),

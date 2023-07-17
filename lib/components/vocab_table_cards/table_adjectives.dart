@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinyin_pal/constants/colors.dart';
 
-class VocabTableObjects extends StatelessWidget {
-  const VocabTableObjects({super.key});
+class VocabTableAdjectives extends StatelessWidget {
+  const VocabTableAdjectives({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class VocabTableObjects extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Benda",
+                "Kosakata Kata Sifat",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -44,87 +44,65 @@ class VocabTableObjects extends StatelessWidget {
                     rows: [
                       DataRow(
                         cells: [
-                          DataCell(Text('米饭')),
-                          DataCell(Text('mǐfàn')),
-                          DataCell(Text('Nasi')),
+                          DataCell(Text('好')),
+                          DataCell(Text('hǎo')),
+                          DataCell(Text('Bagus')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('菜')),
-                          DataCell(Text('cài')),
-                          DataCell(Text('Sayur')),
+                          DataCell(Text('大')),
+                          DataCell(Text('dà')),
+                          DataCell(Text('Besar')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('苹果')),
-                          DataCell(Text('píngguǒ')),
-                          DataCell(Text('Apel')),
+                          DataCell(Text('小')),
+                          DataCell(Text('xiǎo')),
+                          DataCell(Text('Sedikit')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('茶')),
-                          DataCell(Text('chá')),
-                          DataCell(Text('Teh')),
+                          DataCell(Text('多')),
+                          DataCell(Text('duō')),
+                          DataCell(Text('Banyak')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('杯子')),
-                          DataCell(Text('bēizi')),
-                          DataCell(Text('Cangkir')),
+                          DataCell(Text('少')),
+                          DataCell(Text('shǎo')),
+                          DataCell(Text('Sedikit')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('飞机')),
-                          DataCell(Text('fēijī')),
-                          DataCell(Text('Pesawat')),
+                          DataCell(Text('冷')),
+                          DataCell(Text('lěng')),
+                          DataCell(Text('Dingin')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('电视')),
-                          DataCell(Text('diànshì')),
-                          DataCell(Text('Televisi')),
+                          DataCell(Text('热')),
+                          DataCell(Text('rè')),
+                          DataCell(Text('Panas')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('电脑')),
-                          DataCell(Text('diànnǎo')),
-                          DataCell(Text('Komputer')),
+                          DataCell(Text('高兴')),
+                          DataCell(Text('gāoxìng')),
+                          DataCell(Text('Senang')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('钱')),
-                          DataCell(Text('qián')),
-                          DataCell(Text('Uang')),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(Text('书')),
-                          DataCell(Text('shū')),
-                          DataCell(Text('Buku')),
-                        ],
-                      ),
-                      //Recently Added
-                      DataRow(
-                        cells: [
-                          DataCell(Text('汉语')),
-                          DataCell(Text('hànyǔ')),
-                          DataCell(Text('Bahasa Mandarin')),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(Text('字')),
-                          DataCell(Text('zì')),
-                          DataCell(Text('Huruf')),
+                          DataCell(Text('漂亮')),
+                          DataCell(Text('piàoliàng')),
+                          DataCell(Text('Indah')),
                         ],
                       ),
                     ],

@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinyin_pal/constants/colors.dart';
 
-class VocabTablePlaces extends StatelessWidget {
-  const VocabTablePlaces({super.key});
+class VocabTableQuestionsAndAdverbs extends StatelessWidget {
+  const VocabTableQuestionsAndAdverbs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class VocabTablePlaces extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Tempat",
+                "Kosakata Pertanyaan dan Keterangan",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -30,7 +30,6 @@ class VocabTablePlaces extends StatelessWidget {
               Column(
                 children: [
                   DataTable(
-                    columnSpacing: 15,
                     columns: [
                       DataColumn(
                         label: Text('Mandarin'),
@@ -45,94 +44,100 @@ class VocabTablePlaces extends StatelessWidget {
                     rows: [
                       DataRow(
                         cells: [
-                          DataCell(Text('家')),
-                          DataCell(Text('jiā')),
-                          DataCell(Text('Rumah')),
+                          DataCell(Text('哪儿')),
+                          DataCell(Text('nǎr')),
+                          DataCell(Text('Dimana')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('学校')),
-                          DataCell(Text('xuéxiào')),
-                          DataCell(Text('Sekolah')),
+                          DataCell(Text('谁')),
+                          DataCell(Text('shuí')),
+                          DataCell(Text('Siapa')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('饭店')),
-                          DataCell(Text('fàndiàn')),
-                          DataCell(Text('Restoran')),
+                          DataCell(Text('什么')),
+                          DataCell(Text('shén me')),
+                          DataCell(Text('Apa/Kenapa')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('商店')),
-                          DataCell(Text('shāngdiàn')),
-                          DataCell(Text('Toko')),
+                          DataCell(Text('多少')),
+                          DataCell(Text('duōshǎo')),
+                          DataCell(Text('Berapa banyak')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('医院')),
-                          DataCell(Text('yīyuàn')),
-                          DataCell(Text('Rumah Sakit')),
-                        ],
-                      ),
-                      //Recently Added
-                      DataRow(
-                        cells: [
-                          DataCell(Text('火车站')),
-                          DataCell(Text('huǒchēzhàn')),
-                          DataCell(Text('Stasiun Kereta')),
+                          DataCell(Text('几')),
+                          DataCell(Text('jǐ')),
+                          DataCell(Text('Beberapa')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('中国')),
-                          DataCell(Text('zhōng guó')),
-                          DataCell(Text('China')),
+                          DataCell(Text('怎么')),
+                          DataCell(Text('zěnme')),
+                          DataCell(Text('Bagaimana')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('北京')),
-                          DataCell(Text('běijīng')),
-                          DataCell(Text('Beijing')),
+                          DataCell(Text('怎么样')),
+                          DataCell(Text('zěnmeyàng')),
+                          DataCell(Text('Bagaimana dengan itu')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('上')),
-                          DataCell(Text('shàng')),
-                          DataCell(Text('Atas')),
+                          DataCell(Text('不')),
+                          DataCell(Text('bù')),
+                          DataCell(Text('Tidak')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('下')),
-                          DataCell(Text('xià')),
-                          DataCell(Text('Bawah')),
+                          DataCell(Text('没')),
+                          DataCell(Text('méi')),
+                          DataCell(Text('Tidak')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('前面')),
-                          DataCell(Text('qiánmiàn')),
-                          DataCell(Text('Depan')),
+                          DataCell(Text('很')),
+                          DataCell(Text('hěn')),
+                          DataCell(Text('Sangat')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('后面')),
-                          DataCell(Text('hòumiàn')),
-                          DataCell(Text('Belakang')),
+                          DataCell(Text('太')),
+                          DataCell(Text('tài')),
+                          DataCell(Text('Terlalu')),
                         ],
                       ),
                       DataRow(
                         cells: [
-                          DataCell(Text('里面')),
-                          DataCell(Text('lǐmiàn')),
-                          DataCell(Text('Dalam (Di dalam)')),
+                          DataCell(Text('都')),
+                          DataCell(Text('dōu')),
+                          DataCell(Text('Semua')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('这儿')),
+                          DataCell(Text('zhèr')),
+                          DataCell(Text('Ini')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(Text('那儿')),
+                          DataCell(Text('nàr')),
+                          DataCell(Text('Itu')),
                         ],
                       ),
                     ],
