@@ -15,7 +15,6 @@ class SpeechApi {
 
     final isAvailable = await _speech.initialize(
       onStatus: (status) => onListening(_speech.isListening),
-      onError: (e) => print('Error: $e'),
     );
 
     if (isAvailable) {

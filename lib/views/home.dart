@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
       int count = modulesData[id]['count'];
       int sequence = modulesData[id]['sequence'] - 1;
       String title = modulesData[id]['title'];
-      String description = modulesData[id]['description'];
+
       String lessonHanzi = modulesData[id]['lessonHanzi'];
       String lessonPinyin = modulesData[id]['lessonPinyin'];
 

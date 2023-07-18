@@ -60,7 +60,7 @@ class VocabTableCounters extends StatelessWidget {
                         cells: [
                           DataCell(Text('本')),
                           DataCell(Text('běn')),
-                          DataCell(Text('Buku(Unit hitungan buku)')),
+                          DataCell(Text('Buku(Unit buku)')),
                         ],
                       ),
                       DataRow(

@@ -60,7 +60,7 @@ class VocabTableAdjectives extends StatelessWidget {
                         cells: [
                           DataCell(Text('小')),
                           DataCell(Text('xiǎo')),
-                          DataCell(Text('Sedikit')),
+                          DataCell(Text('Kecil')),
                         ],
                       ),
                       DataRow(

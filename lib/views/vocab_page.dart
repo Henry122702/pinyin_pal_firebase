@@ -40,21 +40,37 @@ class _VocabPageState extends State<VocabPage> {
         children: [
           Column(
             children: [
+              // GestureDetector(
+              //   onTap: () {
+              //     setState(() {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => const NumbersVocabTable()),
+              //       );
+              //     });
+              //   },
+              //   child: VocabCard(
+              //       vocabTitle: "Angka",
+              //       vocabWordCount: "10 Kata",
+              //       vocabHanzi: " 一, 二, 三 ",
+              //       vocabPinyin: "yī  èr  sān"),
+              // ),
               GestureDetector(
-                onTap: () {
+                onTap: (() {
                   setState(() {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const NumbersVocabTable()),
+                          builder: (context) => const PeopleVocabTable()),
                     );
                   });
-                },
+                }),
                 child: VocabCard(
-                    vocabTitle: "Angka",
-                    vocabWordCount: "10 Kata",
-                    vocabHanzi: " 一, 二, 三 ",
-                    vocabPinyin: "yī  èr  sān"),
+                    vocabTitle: "Orang",
+                    vocabWordCount: "18 Kata",
+                    vocabHanzi: " 我, 你, 朋友 ",
+                    vocabPinyin: "wǒ nǐ péngyou "),
               ),
               GestureDetector(
                 onTap: () {
@@ -89,22 +105,6 @@ class _VocabPageState extends State<VocabPage> {
                     vocabPinyin: "yīfu zhuōzi yǐzi "),
               ),
               GestureDetector(
-                onTap: (() {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PeopleVocabTable()),
-                    );
-                  });
-                }),
-                child: VocabCard(
-                    vocabTitle: "Orang",
-                    vocabWordCount: "18 Kata",
-                    vocabHanzi: " 我, 你, 朋友 ",
-                    vocabPinyin: "wǒ nǐ péngyou "),
-              ),
-              GestureDetector(
                 onTap: () {
                   setState(() {
                     Navigator.push(
@@ -126,22 +126,6 @@ class _VocabPageState extends State<VocabPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const PlaceVocabTable()),
-                    );
-                  });
-                },
-                child: VocabCard(
-                    vocabTitle: "Tempat",
-                    vocabWordCount: "18 Kata",
-                    vocabHanzi: "家, 学校, 饭店 ",
-                    vocabPinyin: "jiā, xuéxiào, fàndiàn "),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
                           builder: (context) => const ActivitiesVocabTable()),
                     );
                   });
@@ -152,6 +136,24 @@ class _VocabPageState extends State<VocabPage> {
                     vocabHanzi: " 吃, 喝, 睡觉 ",
                     vocabPinyin: "chī, hē, shuìjiào "),
               ),
+
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PlaceVocabTable()),
+                    );
+                  });
+                },
+                child: VocabCard(
+                    vocabTitle: "Tempat",
+                    vocabWordCount: "18 Kata",
+                    vocabHanzi: "家, 学校, 饭店 ",
+                    vocabPinyin: "jiā, xuéxiào, fàndiàn "),
+              ),
+
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -164,26 +166,10 @@ class _VocabPageState extends State<VocabPage> {
                   });
                 },
                 child: VocabCard(
-                    vocabTitle: "Pertanyaan dan Keterangan",
+                    vocabTitle: "Keterangan",
                     vocabWordCount: "14 Kata",
                     vocabHanzi: " 哪儿, 谁, 很 ",
                     vocabPinyin: "nǎr, shuí, hěn "),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CountersTable()),
-                    );
-                  });
-                },
-                child: VocabCard(
-                    vocabTitle: "Unit Hitungan",
-                    vocabWordCount: "5 Kata",
-                    vocabHanzi: " 个, 岁, 本 ",
-                    vocabPinyin: "gè, suì, běn "),
               ),
               GestureDetector(
                 onTap: () {
@@ -200,6 +186,22 @@ class _VocabPageState extends State<VocabPage> {
                     vocabWordCount: "9 Kata",
                     vocabHanzi: " 好, 大, 小 ",
                     vocabPinyin: "hǎo, dà, xiǎo "),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CountersTable()),
+                    );
+                  });
+                },
+                child: VocabCard(
+                    vocabTitle: "Unit Hitungan",
+                    vocabWordCount: "5 Kata",
+                    vocabHanzi: " 个, 岁, 本 ",
+                    vocabPinyin: "gè, suì, běn "),
               ),
             ],
           ),
