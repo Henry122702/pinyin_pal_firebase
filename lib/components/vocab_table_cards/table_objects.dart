@@ -21,7 +21,7 @@ class VocabTableObjects extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Benda",
+                "Benda",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,

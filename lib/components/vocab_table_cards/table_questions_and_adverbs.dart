@@ -21,15 +21,16 @@ class VocabTableQuestionsAndAdverbs extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Pertanyaan dan Keterangan",
+                "Keterangan",
                 style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: GlobalColors.primaryBlackColor),
               ),
               Column(
                 children: [
                   DataTable(
+                    columnSpacing: 40,
                     columns: [
                       DataColumn(
                         label: Text('Mandarin'),

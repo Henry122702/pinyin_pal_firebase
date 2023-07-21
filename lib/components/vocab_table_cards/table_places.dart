@@ -21,7 +21,7 @@ class VocabTablePlaces extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Tempat",
+                "Tempat",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class VocabTablePlaces extends StatelessWidget {
               Column(
                 children: [
                   DataTable(
-                    columnSpacing: 15,
+                    columnSpacing: 45,
                     columns: [
                       DataColumn(
                         label: Text('Mandarin'),

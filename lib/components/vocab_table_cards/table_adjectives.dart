@@ -21,7 +21,7 @@ class VocabTableAdjectives extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Kata Sifat",
+                "Kata Sifat",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,

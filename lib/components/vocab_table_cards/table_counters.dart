@@ -21,9 +21,9 @@ class VocabTableCounters extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Perhitungan",
+                "Unit Hitungan",
                 style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: GlobalColors.primaryBlackColor),
               ),

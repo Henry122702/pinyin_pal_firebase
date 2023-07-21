@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pinyin_pal/components/vocab_table_cards/table_objects.dart';
+import 'package:pinyin_pal/components/vocab_table_cards/table_objects_2.dart';
 
 import 'package:pinyin_pal/constants/colors.dart';
 
@@ -35,7 +36,7 @@ class _ObjectsVocabTable2State extends State<ObjectsVocabTable2> {
       body: ListView(
         children: [
           Column(
-            children: [VocabTableObjects()],
+            children: [VocabTableObjects2()],
           ),
         ],
       ),

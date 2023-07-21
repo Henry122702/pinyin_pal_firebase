@@ -21,7 +21,7 @@ class VocabTableActivities extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Kosakata Aktivitas",
+                "Aktivitas",
                 style: TextStyle(
                     fontSize: 33,
                     fontWeight: FontWeight.bold,
