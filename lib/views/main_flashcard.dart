@@ -138,47 +138,70 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        if (_moduleIndex == 0) {
-                                          Navigator.of(context).pop();
-                                        } else if (_moduleIndex - 1 >
-                                            _questionData.length - 1) {
-                                          Navigator.of(context).pop();
-                                        } else {
-                                          text = "";
-                                          _moduleIndex -= 1;
-                                        }
-                                      });
-                                    },
-                                    icon: Icon(
-                                      Icons.arrow_left,
-                                      size: 50,
-                                    ),
-                                  ),
+                                  _moduleIndex == 0 ||
+                                          _moduleIndex - 1 >
+                                              _questionData.length - 1
+                                      ? IconButton(
+                                          onPressed: () {
+                                            setState(() {});
+                                          },
+                                          icon: Icon(
+                                            Icons.arrow_left,
+                                            size: 50,
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                      : IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              if (_moduleIndex == 0) {
+                                                Navigator.of(context).pop();
+                                              } else if (_moduleIndex - 1 >
+                                                  _questionData.length - 1) {
+                                                Navigator.of(context).pop();
+                                              } else {
+                                                text = "";
+                                                _moduleIndex -= 1;
+                                              }
+                                            });
+                                          },
+                                          icon: Icon(
+                                            Icons.arrow_left,
+                                            size: 50,
+                                          ),
+                                        ),
                                   Text(
                                     question.indonesian,
                                     style: TextStyle(
                                       fontSize: 20,
                                     ),
                                   ),
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          if (_moduleIndex + 1 >
-                                              _questionData.length - 1) {
-                                            Navigator.of(context).pop();
-                                          } else {
-                                            text = "";
-                                            _moduleIndex += 1;
-                                          }
-                                        });
-                                      },
-                                      icon: Icon(
-                                        Icons.arrow_right,
-                                        size: 50,
-                                      ))
+                                  _moduleIndex + 1 > _questionData.length - 1
+                                      ? IconButton(
+                                          onPressed: () {
+                                            setState(() {});
+                                          },
+                                          icon: Icon(
+                                            Icons.arrow_right,
+                                            size: 50,
+                                            color: Colors.white,
+                                          ))
+                                      : IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              if (_moduleIndex + 1 >
+                                                  _questionData.length - 1) {
+                                                Navigator.of(context).pop();
+                                              } else {
+                                                text = "";
+                                                _moduleIndex += 1;
+                                              }
+                                            });
+                                          },
+                                          icon: Icon(
+                                            Icons.arrow_right,
+                                            size: 50,
+                                          ))
                                 ],
                               ),
                               SizedBox(
