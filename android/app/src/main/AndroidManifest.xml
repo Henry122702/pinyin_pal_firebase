@@ -9,7 +9,7 @@
 
 
    <application
-        android:label="pinyin_pal"
+        android:label="PinyinPal: Pronunciation Trainer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

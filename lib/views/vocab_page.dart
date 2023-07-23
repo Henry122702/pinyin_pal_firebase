@@ -6,12 +6,11 @@ import 'package:pinyin_pal/components/vocabulary_card.dart';
 import 'package:pinyin_pal/constants/colors.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_activities.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_counters.dart';
-import 'package:pinyin_pal/views/vocab_table_view/vocab_numbers.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_objects.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_objects_2.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_people.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_place.dart';
-import 'package:pinyin_pal/views/vocab_table_view/vocab_question_and_adverbs%20copy.dart';
+import 'package:pinyin_pal/views/vocab_table_view/vocab_adjectives.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_question_and_adverbs.dart';
 import 'package:pinyin_pal/views/vocab_table_view/vocab_time.dart';
 

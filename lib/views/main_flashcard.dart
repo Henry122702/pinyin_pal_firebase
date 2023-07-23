@@ -220,7 +220,11 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                   ),
                                   Text(
                                     text,
-                                    style: text == question.question
+                                    style: PinyinHelper.getPinyin(text,
+                                                    format: PinyinFormat
+                                                        .WITH_TONE_MARK) ==
+                                                question.answer ||
+                                            text == question.question
                                         ? TextStyle(
                                             color: Colors.green,
                                             fontWeight: FontWeight.bold,
@@ -235,7 +239,11 @@ class _MainFlashcardPageState extends State<MainFlashcardPage> {
                                   Text(
                                     PinyinHelper.getPinyin(text,
                                         format: PinyinFormat.WITH_TONE_MARK),
-                                    style: text == question.question
+                                    style: text == question.question ||
+                                            PinyinHelper.getPinyin(text,
+                                                    format: PinyinFormat
+                                                        .WITH_TONE_MARK) ==
+                                                question.answer
                                         ? TextStyle(
                                             fontSize: 32,
                                             fontWeight: FontWeight.bold,
